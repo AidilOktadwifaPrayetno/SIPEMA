@@ -62,10 +62,15 @@
 
 			<?php 
 				if(isset($_POST['Update'])){
-					$update=mysqli_query($koneksi,"UPDATE mahasiswa SET nim='".$_POST['nim']."',nama='".$_POST['nama']."',username='".$_POST['username']."',telp='".$_POST['telp']."' WHERE nim='".$r['nim']."' ");
-					if($update){
-						echo "<script>alert('Data Tersimpan')</script>";
-						echo "<script>location='location:index.php?p=registrasi';</script>";
+					// Check if data already exists
+					$checkQuery = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='".$_POST['nim']."' OR username='".$_POST['username']."' AND nim != '".$r['nim']."'");
+					if(mysqli_num_rows($checkQuery) > 0){
+						echo "<script>alert('Ada data yang sama'); location='index.php?p=mahasiswa';</script>";
+					} else {
+						$update=mysqli_query($koneksi,"UPDATE mahasiswa SET nim='".$_POST['nim']."',nama='".$_POST['nama']."',username='".$_POST['username']."',telp='".$_POST['telp']."' WHERE nim='".$r['nim']."' ");
+						if($update){
+							echo "<script>alert('Data Tersimpan'); location='index.php?p=mahasiswa';</script>";
+						}
 					}
 				}
 			 ?>
@@ -115,12 +120,18 @@
 
 			<?php 
 				if(isset($_POST['simpan'])){
-					$password = ($_POST['password']);
+					$password = $_POST['password'];
 
-					$query=mysqli_query($koneksi,"INSERT INTO mahasiswa VALUES ('".$_POST['nim']."','".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."')");
-					if($query){
-						echo "<script>alert('Data Tesimpan')</script>";
-						echo "<script>location='location:index.php?p=registrasi';</script>";
+					// Check if data already exists
+					$checkQuery = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='".$_POST['nim']."' OR username='".$_POST['username']."'");
+					if(mysqli_num_rows($checkQuery) > 0){
+						echo "<script>alert('Data sudah ada')</script>";
+					} else {
+						$query=mysqli_query($koneksi,"INSERT INTO mahasiswa VALUES ('".$_POST['nim']."','".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."')");
+						if($query){
+							echo "<script>alert('Data Tersimpan')</script>";
+							echo "<script>location='location:index.php?p=registrasi';</script>";
+						}
 					}
 				}
 			 ?>
