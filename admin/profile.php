@@ -12,8 +12,8 @@ require_once '../conn/koneksi.php';
 			
 			<table border="3" class="responsive-table striped highlight">
 				<tr>
-					<td>NIM</td>
-					<td>Nama</td>
+					<td>ID Petugas</td>
+					<td>Nama Petugas</td>
                     <td>No Telp</td>
 					<td>Username</td>
                     <td>Password</td>

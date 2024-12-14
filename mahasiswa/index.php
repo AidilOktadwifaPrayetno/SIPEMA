@@ -117,7 +117,7 @@
 			include_once 'dashboard.php';
 		}
     elseif(@$_GET['p']=="pengaduan"){
-			include_once 'pengaduan.php';
+			include_once 'tambah_laporan.php';
 		}
     elseif(@$_GET['p']=="daftar_laporan"){
 			include_once 'daftar_laporan.php';
