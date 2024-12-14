@@ -51,26 +51,59 @@
     <div class="row">
       <div class="col s12 m3">
           <ul id="slide-out" class="sidenav sidenav-fixed">
-            <!-- <style>
+            <style>
               .sidenav-fixed{
-                background-color: #ff0000;
+                background-color: #000000;
+                color: #ffffff;
               }
-            </style> -->
+              .sidenav-fixed li i{
+                color: #ffffff;
+              }
+              .sidenav-fixed li a:hover{
+              background-color: #ff7043;
+              color: #ffffff;
+              font-weight: bold;
+              font-size: 16px;
+              margin-left: 10px;
+              margin-right: 10px;
+              padding: 10px;
+              border-radius: 10px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+              margin-top: 10px;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+              .sidenav-fixed li a{
+                color: #ffffff;
+                font-weight: bold;
+              }
+            </style>
               <li>
                   <div class="user-view">
-                      <a href="#user"><img class="circle" src="https://cdn5.vectorstock.com/i/1000x1000/01/69/businesswoman-character-avatar-icon-vector-12800169.jpg"></a>
-                      <a href="#name"><span class="black-text name"><?php echo ucwords($_SESSION['data']['nama']); ?></span></a>
+                      <div style="display: flex; align-items: center; justify-content:  margin: 10px;">
+                        <a href="index.php?p=dashboard"><img class="circle" src="../img/logo.png"></a>
+                        <span style="font-size: 20px; font-weight: bold; margin-left: 10px;">SIPEMA</span>
+                      </div>
+                      <a href="index.php?p=profile"><span class="orange-text name"><?php echo ucwords($_SESSION['data']['nama']); ?></span></a>
                   </div>
               </li>
-              <li><a href="index.php?p=dashboard"><i class="material-icons">add_box</i>Tambah Pengaduan</a></li>
-              <li><a href="index.php?p=daftar_laporan"><i class="material-icons">assignment_turned_in</i>Daftar Laporan</a></li>
+              <li><a href="index.php?p=dashboard"><i class="material-icons" style="color: #ffffff;">dashboard</i>Dashboard</a></li>
+              <li><a href="index.php?p=pengaduan"><i class="material-icons" style="color: #ffffff;">add_box</i>Tambah Pengaduan</a></li>
+              <li><a href="index.php?p=daftar_laporan"><i class="material-icons" style="color: #ffffff;">assignment_turned_in</i>Daftar Pengaduan</a></li>
               <li>
                   <div class="divider"></div>
               </li>
-              <li><a href="index.php?p=profile"><i class="material-icons">account_circle</i>Profile</a></li>
-              <li><a class="waves-effect" href="../index.php?p=logout"><i class="material-icons">logout</i>Logout</a></li>
+              <li><a href="index.php?p=profile"><i class="material-icons" style="color: #ffffff;">account_circle</i>Profile</a></li>
+              <li><a class="waves-effect" href="../index.php?p=logout"><i class="material-icons" style="color: #ffffff;">logout</i>Logout</a></li>
           </ul>
-
+              
           <a href="#" data-target="slide-out" class="btn sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
 
@@ -82,6 +115,9 @@
 		}
 		elseif(@$_GET['p']=="dashboard"){
 			include_once 'dashboard.php';
+		}
+    elseif(@$_GET['p']=="pengaduan"){
+			include_once 'pengaduan.php';
 		}
     elseif(@$_GET['p']=="daftar_laporan"){
 			include_once 'daftar_laporan.php';

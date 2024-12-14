@@ -1,10 +1,10 @@
 <div class="row">
           <div class="col s12 m9">
-            <h3 class="orange-text">Laporan</h3>
+            <h3 class="orange-text" style="font-weight: bold;">LAPORAN</h3>
           </div> 
           <div class="col s12 m3">
             <div class="section"></div>
-            <a class="waves-effect waves-light btn blue" href="cetak.php"><i class="material-icons">print</i></a>
+            <a class="waves-effect waves-light btn blue" href="cetak.php" target="_blank"><i class="material-icons">print</i></a>
           </div>
         </div>
 

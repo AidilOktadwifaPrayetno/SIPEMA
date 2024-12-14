@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s12 m9">
-    <h3 class="orange-text">Pengaduan</h3>
+    <h3 class="orange-text" style="font-weight: bold;">PENGADUAN BARU</h3>
   </div>
 </div>
 

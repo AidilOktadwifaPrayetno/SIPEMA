@@ -4,7 +4,7 @@ require_once '../conn/koneksi.php';
 
 <table class="responsive-table" border="1" style="width: 100%;">
 	<tr>
-		<td><h4 class="orange-text hide-on-med-and-down">Profile</h4></td>
+		<td><h4 class="orange-text hide-on-med-and-down" style="font-weight: bold;">PROFILE</h4></td>
 		
 	</tr>
 	<tr>
@@ -26,7 +26,7 @@ require_once '../conn/koneksi.php';
 					<tr>
 						<td><?php echo $r['id_petugas']; ?></td>
 						<td><?php echo $r['nama_petugas']; ?></td>
-						<td><?php echo $r['telp_petugas']; ?></td>
+						<td><?php echo $r['telp_petugas'] == null ? '-' : $r['telp_petugas']; ?></td>
 						<td><?php echo $r['username']; ?></td>
 						<td><?php echo $r['password'] == 'kosong' ? 'kosong' : '******';  ?></td>
 						<td>

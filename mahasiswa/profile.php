@@ -5,7 +5,7 @@ session_start();
 
 <table class="responsive-table" border="1" style="width: 100%;">
 	<tr>
-		<td><h4 class="orange-text hide-on-med-and-down">Profile</h4></td>
+		<td><h4 class="orange-text" style="font-weight: bold;">PROFILE</h4></td>
 		
 	</tr>
 	<tr>

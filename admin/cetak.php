@@ -1,5 +1,11 @@
-<h1 style="text-align: center;">SIPEMA</h1>
-<h2 style="text-align: center;">Laporan Pengaduan Mahasiswa</h2>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="../img/logo.png" width="100" style="margin-right: 20px;">
+  <div>
+    <h1 style="text-align: center;">SIPEMA</h1>
+    <h2 style="text-align: center;">Laporan Pengaduan Mahasiswa</h2>
+  </div>
+  <img src="../img/logo.png" width="100" style="margin-left: 20px;">
+</div>
 
 <div class="filter-section" style="margin-bottom: 20px; text-align: center;">
   <!-- Filter by Month -->
@@ -21,7 +27,7 @@
 
   <!-- Filter by Week -->
   <select id="filterWeek" style="padding: 5px; margin-right: 10px;">
-    <option value="">Minggu</option>
+    <option value="">Minggu 1-4</option>
     <option value="1">Minggu 1</option>
     <option value="2">Minggu 2</option>
     <option value="3">Minggu 3</option>
@@ -116,8 +122,8 @@
 
     const filterInfo = document.getElementById('filter-info');
     const monthText = month ? `Bulan ${document.getElementById('filterMonth').options[document.getElementById('filterMonth').selectedIndex].text}` : 'Semua Bulan';
-    const weekText = week ? `Minggu ${week}` : 'Semua Minggu';
-    const yearText = year ? `Tahun ${year}` : 'Semua Tahun';
+    const weekText = week ? `Minggu ${document.getElementById('filterWeek').options[document.getElementById('filterWeek').selectedIndex].text}` : 'Semua Minggu';
+    const yearText = year ? `Tahun ${document.getElementById('filterYear').options[document.getElementById('filterYear').selectedIndex].text}` : 'Semua Tahun';
     filterInfo.innerText = `Laporan untuk ${monthText}, ${weekText}, ${yearText}`;
   };
 
